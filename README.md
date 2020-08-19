@@ -12,6 +12,9 @@
 #### Installation
 <pre>
 <code>
+In this case, just use single node.
+If you want to cluster(In local), need to install LB(HA Proxy : http://www.haproxy.org/) and VIP(Keepalived : https://www.keepalived.org/)
+Then, configure RabbitMQ.conf.
 </code>
 </pre>
 
@@ -19,6 +22,9 @@
 #### Installation
 <pre>
 <code>
+In this case, just use single node.
+If you want to cluster(In local), need to install LB(HA Proxy : http://www.haproxy.org/) and VIP(Keepalived : https://www.keepalived.org/)
+Then, configure hazelcast.xml.
 </code>
 </pre>
 
@@ -26,6 +32,8 @@
 #### Installation
 <pre>
 <code>
+In this case, just use single node.
+If you want to cluster(In local), need to install LB(Max Scale : https://mariadb.com/kb/en/maxscale/) and HA(Galera Cluster : https://galeracluster.com/products/)
 </code>
 </pre>
 

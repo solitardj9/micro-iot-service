@@ -7,7 +7,7 @@
   
 ## 2. System Architecture
 
-## 3. Constrcut System
+## 3. Build a System
 ### 3.1 Message Middleware (RabbitMQ)
 #### Installation
 <pre>

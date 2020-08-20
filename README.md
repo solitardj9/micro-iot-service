@@ -18,6 +18,11 @@ Then, configure RabbitMQ.conf.
 </code>
 </pre>
 
+rabbitMQ.conf
+SSL
+Auth
+> > rabbitmq-auth-backend-http
+
 ### 3.2 Im-Memory Storage (Hazelcast)
 #### Installation
 <pre>

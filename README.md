@@ -59,7 +59,8 @@ grant all privileges on *.* to 'micro-iot'@'%' indentified by '9e60a46d06bc' wit
 <code>
 // use MySQL Client
 // reconnect by user 'micro-iot'
-CREATE DATABASE micro_iot;
+create datbase micro_iot;
+use micro_iot;
 </code>
 </pre>
 

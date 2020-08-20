@@ -36,8 +36,16 @@ In this case, just use single node.
 If you want to cluster(In local), need to install LB(Max Scale : https://mariadb.com/kb/en/maxscale/) and HA(Galera Cluster : https://galeracluster.com/products/)
 </code>
 </pre>
+##### 3.1.1. Install
 
+##### 3.1.2. Make Account for Micro-IoT Service
+> > 1) used by Config-Service
+> > 2) used by API-GW-Service
+> > 3) used by IoT-Service
 
+> > If you don't want to use default account, chage account of datasource in bootstrap of Config-Service after 3.1.2.
+
+##### 3.1.2. Make Account for Micro-IoT Service
 
 
 

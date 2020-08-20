@@ -2,7 +2,7 @@
 
 ## 1. Concept
 <div>
-  <img src="https://user-images.githubusercontent.com/24906833/90308734-04745580-df1d-11ea-8dfb-e1a8bbc9a535.png">
+  <img src="https://user-images.githubusercontent.com/24906833/90782997-7d6b1700-e33a-11ea-87a5-3e0abad79102.png">
 </div>
   
 ## 2. System Architecture

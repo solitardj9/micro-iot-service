@@ -67,7 +67,7 @@ use micro_iot;
 ##### 3.1.4. Make Property Table for Micro-IoT Service
 <pre>
 <code>
-CREATE TABLE `properties` (
+create table `properties` (
 			`p_key` VARCHAR(512) NOT NULL,
 			`value` VARCHAR(4096) NULL DEFAULT NULL,
 			`application` VARCHAR(128) NOT NULL,

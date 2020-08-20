@@ -37,6 +37,7 @@ If you want to cluster(In local), need to install LB(Max Scale : https://mariadb
 </code>
 </pre>
 ##### 3.1.1. Install
+> > mariadb 10.5
 
 ##### 3.1.2. Make Account for Micro-IoT Service
 > > 1) used by Config-Service
@@ -47,10 +48,36 @@ If you want to cluster(In local), need to install LB(Max Scale : https://mariadb
 > > 
 <pre>
 <code>
+// use MySQL Client
+create user 'micro-iot'@'%' indentified by '9e60a46d06bc';
+grant all privileges on *.* to 'micro-iot'@'%' indentified by '9e60a46d06bc' with grant option;
 </code>
 </pre>
 
-##### 3.1.2. Make Account for Micro-IoT Service
+##### 3.1.3. Make Database for Micro-IoT Service
+<pre>
+<code>
+// use MySQL Client
+// reconnect by user 'micro-iot'
+CREATE DATABASE micro_iot;
+</code>
+</pre>
+
+##### 3.1.4. Make Property Table for Micro-IoT Service
+<pre>
+<code>
+CREATE TABLE `properties` (
+			`p_key` VARCHAR(512) NOT NULL,
+			`value` VARCHAR(4096) NULL DEFAULT NULL,
+			`application` VARCHAR(128) NOT NULL,
+			`profile` VARCHAR(128) NOT NULL,
+			`label` VARCHAR(128) NOT NULL,
+			PRIMARY KEY (`p_key`, `application`, `profile`, `label`)
+);
+</code>
+</pre>
+
+
 
 
 

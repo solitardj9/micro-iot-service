@@ -44,7 +44,8 @@ If you want to cluster(In local), need to install LB(Max Scale : https://mariadb
 > > 3) used by IoT-Service
 
 > > If you don't want to use default account, chage account of datasource in bootstrap of Config-Service after 3.1.2.
-> > <pre>
+> > 
+<pre>
 <code>
 </code>
 </pre>

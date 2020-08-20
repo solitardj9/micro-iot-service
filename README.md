@@ -95,7 +95,9 @@ For the multi node case, modify bootstrap in iot-service.
 </code>
 </pre>
 concept of multip node
-image...comming soon
+<div>
+  <img src="https://user-images.githubusercontent.com/24906833/90783213-c4590c80-e33a-11ea-8c28-2bba7619a37f.png">
+</div>
 
 ##### 3.4.1. Change Account for Database
 > > chage account of datasource in bootstrap of config-service

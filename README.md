@@ -40,15 +40,16 @@ If you want to cluster(In local), need to install LB(Max Scale : https://mariadb
 > > mariadb 10.5
 
 ##### 3.1.2. Make Account for Micro-IoT Service
-> > 1) used by Config-Service
-> > 2) used by API-GW-Service
-> > 3) used by IoT-Service
+> > 1) used by config-service
+> > 2) used by api-service
+> > 3) used by iot-service
 
-> > If you don't want to use default account, chage account of datasource in bootstrap of Config-Service after 3.1.2.
+> > If you don't want to use default account, chage account of datasource in bootstrap of Config-Service. (see 3.4.1. Change Account for Database)
 > > 
 <pre>
 <code>
 // use MySQL Client
+// default account
 create user 'micro-iot'@'%' indentified by '9e60a46d06bc';
 grant all privileges on *.* to 'micro-iot'@'%' indentified by '9e60a46d06bc' with grant option;
 </code>
@@ -78,7 +79,32 @@ create table `properties` (
 </code>
 </pre>
 
+### 3.4 Micro-IoT Service
+#### Installation
+<pre>
+<code>
+In this case, just use single node.
+For the multi node case, modify bootstrap in iot-service.
+> > change propety of consumer for HA(High Availability)
+> > change propety of consumer and consumer group for HA(High Availability) and LB(Load Balancing)
+</code>
+</pre>
+concept of multip node
+image...comming soon
 
+##### 3.4.1. Change Account for Database
+> > chage account of datasource in bootstrap of config-service
 
+##### 3.4.2. Change Account for RabbitMQ
+> > chage account of rabbitmq in data.sql of config-service
 
+##### 3.4.3. run Micro-IoT Service
+
+##### 3.4.4. copy cacert from Micro-IoT Service to RabbitMQ
+> > copy cacert.pem file in iot-service to RabbitMQ server
+
+##### 3.4.5. install cert/key to RabbitMQ
+> > copy cert.pem and key.pem file to RabbitMQ server
+
+##### 
 

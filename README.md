@@ -116,9 +116,9 @@ concept of multip node
 ##### Micro-IoT Services
 ###### > > GW-Service : https://github.com/solitardj9/micro-iot_gw-service
 ###### > > IoT-Service : https://github.com/solitardj9/micro-iot_iot-service
-###### > > Discovery-Service : 
-###### > > Config-Service : 
-###### > > API-Service : 
+###### > > Discovery-Service : https://github.com/solitardj9/micro-iot_discovery-service
+###### > > Config-Service : https://github.com/solitardj9/micro-iot_config-service
+###### > > API-Service : https://github.com/solitardj9/micro-iot_api-service
 
 
 

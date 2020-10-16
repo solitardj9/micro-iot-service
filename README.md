@@ -120,13 +120,15 @@ concept of multip node
 make server.crt, server.key server.pfx with openssl
 
 > > make private key (2048 bit)
-> > > openssl genrsa -out server.key 2048
+	openssl genrsa -out server.key 2048
+	
 > > make csr
-> > > openssl req -new -key server.key -out server.csr
+	openssl req -new -key server.key -out server.csr
 > > make crt (valid in 365 days)
-> > > openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+	openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+	
 > > make PFX (crt + key)
-> > > openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx
+	openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx
 </code>
 </pre>
 

@@ -117,10 +117,16 @@ concept of multip node
 > > make or copy server.pfx to api-gateway service
 <pre>
 <code>
-In this case, just use single node.
-For the multi node case, modify bootstrap in iot-service.
-> > change propety of consumer for HA(High Availability)
-> > change propety of consumer and consumer group for HA(High Availability) and LB(Load Balancing)
+make server.crt, server.key server.pfx with openssl
+
+> > make private key (2048 bit)
+> > > openssl genrsa -out server.key 2048
+> > make csr
+> > > openssl req -new -key server.key -out server.csr
+> > make crt (valid in 365 days)
+> > > openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+> > make PFX (crt + key)
+> > > openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx
 </code>
 </pre>
 

@@ -124,6 +124,7 @@ make server.crt, server.key server.pfx with openssl
 	
 > > make csr
 	openssl req -new -key server.key -out server.csr
+	
 > > make crt (valid in 365 days)
 	openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 	

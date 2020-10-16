@@ -113,6 +113,19 @@ concept of multip node
 ##### 3.4.5. install cert/key to RabbitMQ
 > > copy cert.pem and key.pem file to RabbitMQ server
 
+##### 3.4.6. install cert/key to Micro-IoT-Api-Gateway
+> > make or copy server.pfx to api-gateway service
+<pre>
+<code>
+In this case, just use single node.
+For the multi node case, modify bootstrap in iot-service.
+> > change propety of consumer for HA(High Availability)
+> > change propety of consumer and consumer group for HA(High Availability) and LB(Load Balancing)
+</code>
+</pre>
+
+
+
 ##### Micro-IoT Services
 ###### > > GW-Service : https://github.com/solitardj9/micro-iot_gw-service
 ###### > > IoT-Service : https://github.com/solitardj9/micro-iot_iot-service

@@ -1,0 +1,21 @@
+# reference : https://cheese10yun.github.io/intellij-boot-run-config/
+#server:
+  #port: 19371
+      
+spring:
+  application:
+    name: micro-iot-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config: 
+      uri: http://127.0.0.1:19671
+      
+eureka:
+  instance:
+    instanceId: group1-consumer1
+    
+application:
+  group: group1
+  instance: consumer1
+

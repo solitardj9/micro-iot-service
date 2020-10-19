@@ -1,0 +1,21 @@
+server:
+  #port: 19571
+  # reference for server.pfx : https://great-developer.tistory.com/91
+  ssl:
+    enabled: true
+    key-store: server.pfx
+    key-store-type: PKCS12
+    key-store-password: qe71w46d03b1
+    key-password: qe71w46d03b1
+      
+spring:
+  application:
+    name: micro-iot-api-gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config: 
+      uri: http://127.0.0.1:19671
+
+      
+      

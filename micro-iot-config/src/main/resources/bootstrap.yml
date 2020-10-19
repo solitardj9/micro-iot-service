@@ -1,0 +1,40 @@
+server:
+  port: 19671
+  
+spring:
+  application:
+    name: micro-iot-config
+  profiles:
+    active: jdbc
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://192.168.1.42:3306/micro_iot?createDatabaseIfNotExist=true
+    username: micro-iot
+    password: 9e60a46d06bc
+    # use separator for schema.sql
+    separator: ^;
+    # use hikari.maximum-pool-size when pool size need to be limmited
+    # - referencec : https://jaehun2841.github.io/2020/01/27/2020-01-27-hikaricp-maximum-pool-size-tuning/#%EC%8B%A4%EC%A0%9C%EB%A1%9C-%EB%A7%9E%EB%8A%94-%EA%B3%B5%EC%8B%9D%EC%9D%B8%EC%A7%80-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90
+    #hikari:
+    #  maximum-pool-size: 5
+    initialization-mode: always
+    continue-on-error: true
+  main:
+    allow-bean-definition-overriding: true
+  jpa:    
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  cloud:
+    config:
+      label: master    
+      server:
+        jdbc:
+          sql: SELECT p_key, value FROM properties where application =? and profile=? and label=?
+          
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:19771/eureka
+      
+        

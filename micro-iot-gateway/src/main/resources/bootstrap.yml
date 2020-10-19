@@ -1,0 +1,14 @@
+#server:
+  #port: 19471
+      
+spring:
+  application:
+    name: micro-iot-gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config: 
+      uri: http://127.0.0.1:19671
+
+      
+      

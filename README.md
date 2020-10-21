@@ -55,8 +55,8 @@ If you want to cluster(In local), need to install LB(Max Scale : https://mariadb
 <code>
 // use MySQL Client
 // default account
-create user 'micro-iot'@'%' indentified by '9e60a46d06bc';
-grant all privileges on *.* to 'micro-iot'@'%' indentified by '9e60a46d06bc' with grant option;
+create user 'micro-iot'@'%' identified by '9e60a46d06bc';
+grant all privileges on *.* to 'micro-iot'@'%' identified by '9e60a46d06bc' with grant option;
 </code>
 </pre>
 

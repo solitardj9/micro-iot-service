@@ -8,7 +8,7 @@ SET @gateway.port 			= '19471';
 
 SET @service.port 			= '19371';
 
-SET @db				= '192.168.1.42:3306' ;
+SET @db				= '127.0.0.1:3306' ;
 SET @db.id				= 'micro-iot';
 SET @db.pw				= '9e60a46d06bc';
 
@@ -47,7 +47,11 @@ insert into properties (application, profile, label, p_key, value) values ('micr
 insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'server.port', @service.port);
 insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'eureka.client.serviceUrl.defaultZone',  concat('http://', @discovery.ip, ':', @discovery.port, '/eureka/'));
 insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'instance.topologyMap.backupCount', '3');
-
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'serviceInterface.thing.thingManagerController.regExp.createThing.thing', '[a-zA-Z0-9:_-]{1,128}+');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'serviceInterface.thing.thingManagerController.regExp.createThing.attributePayload.attributes.key', '[a-zA-Z0-9_.,@/:#!-]+{1,128}');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'serviceInterface.thing.thingManagerController.regExp.createThing.attributePayload.attributes.value', '[a-zA-Z0-9_.,@/:#-]*{1,800}');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'instance.instanceManager.healthCheckBatch', '*/3 * * * * ?');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'instance.instanceManager.healthCheckMissTermByMs', '10000');
 
 
 

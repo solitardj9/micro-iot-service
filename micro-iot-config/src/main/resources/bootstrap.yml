@@ -8,7 +8,7 @@ spring:
     active: jdbc
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://192.168.1.42:3306/micro_iot?createDatabaseIfNotExist=true
+    url: jdbc:mariadb://127.0.0.1:3306/micro_iot?createDatabaseIfNotExist=true
     username: micro-iot
     password: 9e60a46d06bc
     # use separator for schema.sql

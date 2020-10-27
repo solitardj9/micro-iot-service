@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GroupDto {
+public class ThingGroupDto {
 	//
 	@Id 
 	@GeneratedValue(strategy=GenerationType.AUTO)							

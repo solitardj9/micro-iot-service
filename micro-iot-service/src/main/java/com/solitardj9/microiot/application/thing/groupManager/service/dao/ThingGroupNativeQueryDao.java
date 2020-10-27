@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
 @Repository("groupNativeQueryDao")
-public class GroupNativeQueryDao {
+public class ThingGroupNativeQueryDao {
 
 	@PersistenceContext
 	private EntityManager entityManager;

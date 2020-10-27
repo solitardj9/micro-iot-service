@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.solitardj9.microiot.application.thing.groupManager.service.ThingGroupManager;
 import com.solitardj9.microiot.application.thing.thingManager.model.Thing;
 import com.solitardj9.microiot.application.thing.thingManager.model.exception.ExceptionThingAlreayExist;
 import com.solitardj9.microiot.application.thing.thingManager.model.exception.ExceptionThingNotFound;
@@ -41,6 +42,9 @@ public class ThingManagerController {
 	
 	@Autowired
 	ThingManager thingManager;
+	
+	@Autowired
+	ThingGroupManager thingGroupManager;
 	
 	@Value("${serviceInterface.thing.thingManagerController.regExp.createThing.thing}")
 	private String regExpThing;
@@ -72,8 +76,6 @@ public class ThingManagerController {
 	public ResponseEntity createThing(@PathVariable("thingName") String thingName,
 									  @RequestBody(required=false) String requestBody) {		
 		//
-		logger.info("[ThingManagerController].createThing is called.");
-		
 		RequestCreateThing request = null;
 		if (requestBody != null && !requestBody.isEmpty()) {
 			//
@@ -128,7 +130,7 @@ public class ThingManagerController {
 			return new ResponseEntity(new ResponseError(e.getMessage(), e.getErrCode()), e.getHttpStatus());
 		}
 	
-		return new ResponseEntity(thing , HttpStatus.OK);
+		return new ResponseEntity(thing, HttpStatus.OK);
 	}
 	
 	/**
@@ -214,7 +216,7 @@ public class ThingManagerController {
 		// TODO : 
 		//groupManager.removeThing(thingName);
 		
-		return new ResponseEntity(null , HttpStatus.OK);
+		return new ResponseEntity(HttpStatus.OK);
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -231,15 +233,6 @@ public class ThingManagerController {
 			return new ResponseEntity(new ResponseError(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	private Boolean checkRegExpForRequestCreateThing(String thingName, RequestCreateThing request) throws ExceptionThingBadRequest {
 		//

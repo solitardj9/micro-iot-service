@@ -1,4 +1,4 @@
-package com.solitardj9.microiot.serviceInterface.thing.thingManagerInterface.model.request;
+package com.solitardj9.microiot.serviceInterface.thing.thingManagerInterface.model.common;
 
 import java.util.Map;
 
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RequestCreateThingAttributePayload {
+public class AttributePayload {
 	
 	private Map<String, String> attributes;
 	

@@ -85,10 +85,10 @@ public class ThingGroupManagerController {
 	 *		}
 	 * @return
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@PostMapping("/thing-groups/{thingGroupName}")
-	public ResponseEntity createThingGroup(@PathVariable("thingGroupName ") String thingGroupName,
-									  	   @RequestBody(required=false) String requestBody) {		
+	public ResponseEntity createThingGroup(@PathVariable("thingGroupName") String thingGroupName,
+									  	   @RequestBody(required=true) String requestBody) {		
 		//
 		RequestCreateThingGroup request = null;
 		if (requestBody != null && !requestBody.isEmpty()) {
@@ -512,7 +512,7 @@ public class ThingGroupManagerController {
 		if (!RegExpUtil.isValidExpression(thingGroupName, regExpGroup, false))
 			throw new ExceptionThingGroupBadRequest();
 		
-		if (!RegExpUtil.isValidExpression(request.getParentGroupName(), regExpGroup, false))
+		if (!RegExpUtil.isValidExpression(request.getParentGroupName(), regExpGroup, true))
 			throw new ExceptionThingGroupBadRequest();
 		
 		if (request.getThingGroupProperties() == null)

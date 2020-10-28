@@ -2,9 +2,9 @@ package com.solitardj9.microiot.application.thing.groupManager.service.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.solitardj9.microiot.application.thing.thingManager.service.dao.dto.ThingDto;
+import com.solitardj9.microiot.application.thing.groupManager.service.dao.dto.ThingGroupDto;
 
-public interface ThingGroupDao extends JpaRepository<ThingDto, Integer> {
+public interface ThingGroupDao extends JpaRepository<ThingGroupDto, Integer> {
 
-	ThingDto findByThingName(String thingName);
+	ThingGroupDto findByThingGroupName(String thingGroupName);
 }

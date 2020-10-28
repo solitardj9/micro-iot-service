@@ -1,5 +1,6 @@
 package com.solitardj9.microiot.application.thing.groupManager.model;
 
+import java.io.Serializable;
 import java.util.Map;
 
 import lombok.AllArgsConstructor;
@@ -9,7 +10,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ThingGroup {
+public class ThingGroup implements Serializable {
+
+	private static final long serialVersionUID = 4124664944461718183L;
 
 	private Integer id;
 	

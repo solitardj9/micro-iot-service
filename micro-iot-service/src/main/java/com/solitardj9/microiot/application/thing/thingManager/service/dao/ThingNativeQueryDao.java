@@ -27,7 +27,7 @@ public class ThingNativeQueryDao {
 				   + "attributes		LONGTEXT DEFAULT NULL, "
 				   + "thing_type_name	varchar(128) DEFAULT NULL, "
 				   + "token				LONGTEXT DEFAULT NULL, "
-				   + "PRIMARY KEY PKEY (id));";	
+				   + "PRIMARY KEY PKEY_THING (id));";	
 		Integer result = entityManager.createNativeQuery(sql).executeUpdate();
 	    
 		return result;

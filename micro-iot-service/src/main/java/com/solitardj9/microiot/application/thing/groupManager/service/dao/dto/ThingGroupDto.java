@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="group")
+@Table(name="thing_group")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,6 +22,21 @@ public class ThingGroupDto {
 	@GeneratedValue(strategy=GenerationType.AUTO)							
 	private Integer id;
 	
-	@Column(name="thing_name")
-	private String groupName;
+	@Column(name="thing_group_name")
+	private String thingGroupName;
+	
+	@Column(name="version")
+	private Integer version;
+	
+	@Column(name="attributes")
+	private String attributes;
+	
+	@Column(name="parent_group_name")
+	private String parentGroupName;
+	
+	@Column(name="thing_group_description")
+	private String thingGroupDescription;
+	
+	@Column(name="root_group_name")
+	private String rootGroupName;
 }

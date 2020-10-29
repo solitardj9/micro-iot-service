@@ -17,12 +17,12 @@ public class CaCertificateNativeQueryDao {
 		String sql = "CREATE TABLE IF NOT EXISTS ca_certificate("
 				   + "id						int NOT NULL AUTO_INCREMENT, "
 				   + "certificate_pem		MEDIUMTEXT DEFAULT NULL, "
-				   + "key_pem					MEDIUMTEXT DEFAULT NULL, "
+				   + "private_key_pem		MEDIUMTEXT DEFAULT NULL, "
 				   + "creation_date			varchar(128) DEFAULT NULL, "
 				   + "expired_date			varchar(128) DEFAULT NULL, "
+				   + "modified_date			varchar(128) DEFAULT NULL, "
 				   + "issuer_name				varchar(128) DEFAULT NULL, "
 				   + "subject_name			varchar(128) DEFAULT NULL, "
-				   + "modify_date				varchar(128) DEFAULT NULL, "
 				   + "PRIMARY KEY PKEY (id)); ";	
 		Integer ret = entityManager.createNativeQuery(sql).executeUpdate();
 	    

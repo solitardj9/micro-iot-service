@@ -45,7 +45,7 @@ public class InMemoryServerManagerImpl implements InMemoryServerManager {
 		try {
 			start();
 		} catch (FileNotFoundException e) {
-			logger.info("[InMemoryServerManager].init : error = " + e);
+			logger.error("[InMemoryServerManager].init : error = " + e);
 		}
 		
 		logger.info("[InMemoryServerManager].init : Hazelcast Server is loaded.");

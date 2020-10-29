@@ -42,6 +42,19 @@ insert into properties (application, profile, label, p_key, value) values ('micr
 
 insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'server.port', @gateway.port);
 insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'eureka.client.serviceUrl.defaultZone',  concat('http://', @discovery.ip, ':', @discovery.port, '/eureka/'));
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.certificate.issuer', 'micro-iot');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.certificate.subject', 'micro-iot-thing');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.certificate.duration.years', '10');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.certificate.alarm.duration.days', '7');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.certificate.signatureAlgorithm', 'SHA256withRSA');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.privateKey.algorithm', 'RSA');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.privateKey.length', '2048');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.file.location', '/home/{admin}/micro-iot/ca');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.file.certificate.name', 'CaCertificate.pem');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.ca.file.privateKey.name', 'CaPrivateKey.pem');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.memCluster.backupCount', '3');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.memCluster.readBackup', 'true');
+insert into properties (application, profile, label, p_key, value) values ('micro-iot-gateway', 'default', 'master', 'application.caManager.caCertificateManager.memCluster.lockTimeout.ms', '1000');
 
 
 insert into properties (application, profile, label, p_key, value) values ('micro-iot-service', 'default', 'master', 'server.port', @service.port);
